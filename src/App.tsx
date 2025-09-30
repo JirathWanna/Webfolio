@@ -1,7 +1,18 @@
 import './App.css'
 import {Chart as ChartJS} from "chart.js/auto"
 import { Pie } from 'react-chartjs-2'
+
+
 import Jirath2 from './assets/IMG_9276.jpg'
+import POSN from './assets/POSN_Pic.jpg'
+import SCI_SU from './assets/LINE_ALBUM_แข่งขันตอบปัญหาวิทยาศาสตร์แข่งขันเขี.jpg'
+import Bamso from './assets/Bamso.jpg'
+import AMC from './assets/AMC.png'
+import TMC from './assets/TMC.jpg'
+import Math5 from './assets/Math5.jpg'
+import Bee from './assets/75.png'
+import NSC from './assets/NSC.png'
+
 import Navbar from './components/Navbar'
 import GridCom from './components/Grid_com'
 
@@ -46,16 +57,35 @@ function App() {
       </div>
       
       <div className='bg-white px-[10%] py-10 shadow-[0_0px_8px_0_rgba(0,0,0,0.15),_0_0px_20px_0_rgba(0,0,0,0.15)]'>
-        <div className='text-4xl font-medium pb-10'>Competitive Programming</div>
-        <div className='grid grid-cols-3 gap-15'>
-          <GridCom></GridCom>
-          <GridCom></GridCom>
-          <GridCom></GridCom>
-          <GridCom></GridCom>
-          <GridCom></GridCom>
-          <GridCom></GridCom>
+        <div className='text-4xl font-medium pb-10'>Competitive Programming 💻</div>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-15'>
+          <GridCom img={POSN} title='สอวน. คอมพิวเตอร์ (ค่าย 1)' organization='มูลนิธิส่งเสริมโอลิมปิกวิชาการและพัฒนามาตรฐานวิทยาศาสตร์ศึกษา (สอวน.)'></GridCom>
+          <GridCom img={SCI_SU} title='การแข่งขันเขียนโปรแกรมคอมพิวเตอร์ งานสัปดาห์วันวิทยาศาสตร์' organization='คณะวิทยาศาสตร์ มหาวิทยาลัยศิลปากร'></GridCom>
+          <GridCom img={Bamso} title='BAMSO 2024 : คอมพิวเตอร์' organization='โรงเรียนบดินทรเดชา (สิงห์ สิงหเสนี)'></GridCom>
         </div>
       </div>
+
+      <div className='bg-gray-100 px-[10%] py-10 shadow-[0_0px_8px_0_rgba(0,0,0,0.15),_0_0px_20px_0_rgba(0,0,0,0.15)]'>
+        <div className='text-4xl font-medium pb-10'>Mathematics 📉</div>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-15'>
+          <GridCom img={AMC} title='Australian Mathematics Competition 2025 (AMC)' organization='Australian Mathematics Trust (AMT)'></GridCom>
+          <GridCom img={TMC} title='13ᵗʰ Thailand Mathematics Contest (TMC)' organization='สมาชิกภาพสหภาพ IMC ประจำประเทศไทย'></GridCom>
+          <GridCom img={Math5} title='การแข่งขันทักษะวิชาการเขตการศึกษา 5  อัครสังฆมณฑลกรุงเทพฯ' organization='โรงเรียนเขตการศึกษา 5 อัครสังฆมณฑลกรุงเทพฯ'></GridCom>
+          <GridCom img={Bee} title='การแข่งขันทักษะวิชาการเขตการศึกษา 5  อัครสังฆมณฑลกรุงเทพฯ' organization='โรงเรียนเขตการศึกษา 5 อัครสังฆมณฑลกรุงเทพฯ'></GridCom>
+        </div>
+      </div>
+
+      <div className='bg-white px-[10%] py-10 shadow-[0_0px_8px_0_rgba(0,0,0,0.15),_0_0px_20px_0_rgba(0,0,0,0.15)]'>
+        <div className='text-4xl font-medium pb-10'>Web & Game Development 🎮</div>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-15'>
+          <GridCom img={NSC} title='การแข่งขันพัฒนาโปรแกรมคอมพิวเตอร์แห่งประเทศไทยครั้งที่ 27 (NSC 2025)' organization='สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ สวทช.'></GridCom>
+          <GridCom img={SCI_SU} title='การแข่งขันเขียนโปรแกรมคอมพิวเตอร์ งานสัปดาห์วันวิทยาศาสตร์' organization='คณะวิทยาศาสตร์ มหาวิทยาลัยศิลปากร'></GridCom>
+          <GridCom img={Bamso} title='BAMSO 2024 : คอมพิวเตอร์' organization='โรงเรียนบดินทรเดชา (สิงห์ สิงหเสนี)'></GridCom>
+        </div>
+      </div>
+
+      
+
     </div>
   )
 }
