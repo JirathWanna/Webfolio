@@ -1,3 +1,7 @@
+import { useState } from "react";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+
 interface Props {
     img : string;
     des : string;
@@ -10,16 +14,55 @@ interface Props {
 
 
 export default function GridInfo({visible,img,des,title,organization,award,onClose} : Props) {
+    const [open, setOpen] = useState(false);
 
     return (
-        <div className= {` ${visible ? "visible opacity-100 z-20":"hidden opacity-0"} fixed top-1/2 left-1/2 w-300 h-200 -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl`}>
-            <div>{title}</div>
-            <div>{des}</div>
-            <img className="w-100" src={img} />
-            <div>{organization}</div>
-            <div>{award}</div>
+        <div className= {` ${visible ? "visible opacity-100 z-20":"hidden opacity-0"} fixed top-1/2 left-1/2 w-100 md:w-150 lg:w-250 h-150 md:h-150 lg:h-150 -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl`}>
+            <div className="relative h-[50%]">
+                <img
+                    className="w-full h-full rounded-t-2xl object-cover"
+                    src={img}
+                    alt=""
+                />
 
-            <button onClick={onClose} className="cursor-pointer bg-red-600 text-white p-3 rounded-2xl absolute top-1 right-1">X</button>
+                <div className="absolute inset-0 bg-black/60 rounded-t-2xl z-0"></div>
+
+                <div className="absolute inset-0 z-10 flex flex-col justify-center px-10 text-white">
+                    <div className="text-2xl lg:text-5xl md:text-4xl font-black text-shadow-black text-shadow-lg">{title}</div>
+                    <div className="text-shadow-black text-shadow-lg text-gray-100 my-7">{organization}</div>
+                    <div className="flex">
+                        <div className={` text-[1rem]  text-white bg-black/70 p-3 rounded-[0.5rem]`}> {award} </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div className="p-5 h-[50%] overflow-y-scroll flex flex-col gap-5 lg:flex-row">
+                <div className="text-gray-800 flex-2">{des}</div>
+
+                <div className="flex-1 flex flex-col">
+                    <button className="cursor-pointer" type="button" onClick={() => setOpen(true)}>
+                        <img className="p-3" src={img} alt="" />
+                        <img className="p-3" src={img} alt="" />
+                    </button>
+                    
+
+                    <Lightbox
+                        open={open}
+                        close={() => setOpen(false)}
+                        slides={[
+                        { src: img },
+                        { src: img },
+                        { src: img },
+                        ]}
+                    />
+                </div>
+                
+            </div>
+            
+            
+
+            <button onClick={onClose} className="cursor-pointer z-50 bg-red-600 text-white p-3 rounded-2xl absolute top-1 right-1">X</button>
         </div>
     )
 }

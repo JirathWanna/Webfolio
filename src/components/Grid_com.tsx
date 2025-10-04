@@ -15,8 +15,13 @@ export default function GridCom({img,title,organization,Award,onClick} : Props) 
             <img onClick={onClick} src={img} alt="" className="w-full  rounded-t-[10px] h-60 object-cover"/>
             <div onClick={onClick} className="w-full py-3 duration-200 bg-white rounded-b-2xl  px-6 items-center group-hover:px-7">
                 <div className="text-[1.5rem]">{title}</div>
+
                 <div className="text-gray-500 text-[1rem] my-1"> {organization}</div>
-                <div className={` text-[1rem] `}> {Award} </div>
+                
+                <div className="flex mt-2">
+                    <div className={` text-[1rem] text-sky-900 bg-sky-200  px-3 rounded-[0.5rem]`}> {Award} </div>
+                </div>
+                
             </div>
         </div>
     )
