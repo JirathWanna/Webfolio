@@ -8,16 +8,18 @@ interface Props {
     title : string;
     organization : string;
     award : string;
+    img1 : string;
+    img2 : string;
     visible : boolean;
     onClose : () => void;
 }
 
 
-export default function GridInfo({visible,img,des,title,organization,award,onClose} : Props) {
+export default function GridInfo({visible,img,des,title,organization,award,img1,img2,onClose} : Props) {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className= {` ${visible ? "visible opacity-100 z-20":"hidden opacity-0"} fixed top-1/2 left-1/2 w-100 md:w-150 lg:w-250 h-150 md:h-150 lg:h-150 -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl`}>
+        <div className= {` ${visible ? "visible opacity-100 z-20":"hidden opacity-0"} fixed top-1/2 left-1/2 w-100 md:w-150 lg:w-250 h-150  lg:h-[65%] -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl`}>
             <div className="relative h-[50%]">
                 <img
                     className="w-full h-full rounded-t-2xl object-cover"
@@ -38,12 +40,18 @@ export default function GridInfo({visible,img,des,title,organization,award,onClo
             </div>
             
             <div className="p-5 h-[50%] overflow-y-scroll flex flex-col gap-5 lg:flex-row">
-                <div className="text-gray-800 flex-2">{des}</div>
+                <div className="text-gray-800 flex-1">
+                    <div>{des}</div>
+                </div>
+                
 
                 <div className="flex-1 flex flex-col">
                     <button className="cursor-pointer" type="button" onClick={() => setOpen(true)}>
-                        <img className="p-3" src={img} alt="" />
-                        <img className="p-3" src={img} alt="" />
+                        <div className="flex flex-col lg:flex-row">
+                            <img className="m-3 w-full lg:w-50 object-cover" src={img1} alt="" />
+                            <img className="m-3 w-full lg:w-50 object-cover" src={img2} alt="" />
+                        </div>
+                        
                     </button>
                     
 
@@ -51,9 +59,8 @@ export default function GridInfo({visible,img,des,title,organization,award,onClo
                         open={open}
                         close={() => setOpen(false)}
                         slides={[
-                        { src: img },
-                        { src: img },
-                        { src: img },
+                        { src: img1 },
+                        { src: img2 }
                         ]}
                     />
                 </div>
