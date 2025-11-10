@@ -38,6 +38,7 @@ import Workspace3 from './assets/Workspace3.png'
 
 import coffee from './assets/coffee.png'
 import coffee2 from './assets/Coffee2.png'
+import coffee3 from'./assets/coffee3.png'
 
 import Navbar from './components/Navbar'
 import GridCom from './components/Grid_com'
@@ -234,7 +235,7 @@ function App() {
           </ProjectCom>
 
           <ProjectCom onClick={() => handleProjectClicked(
-            {img: coffee, img1 : coffee, img2 : coffee2, img3 : Workspace3 , des : "เว็บไซต์ร้านกาแฟ เป็นเว็บไซต์ที่ผมพัฒนาให้กับร้านกาแฟของแม่ ซึ่งนับเป็นเว็บไซต์แรกที่ผมสร้างขึ้นเพื่อฝึกทักษะการใช้เครื่องมือพื้นฐานอย่าง HTML และ CSS ภายในเว็บไซต์ประกอบด้วย ประวัติและบรรยากาศของร้าน เมนูเครื่องดื่มและอาหาร รีวิวจากลูกค้า และช่องทางการติดต่อ เว็บไซต์นี้นับเป็นจุดเริ่มต้นที่ดีของการพัฒนาผลงานเว็บไซต์ต่อ ๆ ไปของผม", title : "Website ร้านกาแฟ", organization : "My Project", award : ""
+            {img: coffee, img1 : coffee, img2 : coffee2, img3 : coffee3 , des : "เว็บไซต์ร้านกาแฟ เป็นเว็บไซต์ที่ผมพัฒนาให้กับร้านกาแฟของแม่ ซึ่งนับเป็นเว็บไซต์แรกที่ผมสร้างขึ้นเพื่อฝึกทักษะการใช้เครื่องมือพื้นฐานอย่าง HTML และ CSS ภายในเว็บไซต์ประกอบด้วย ประวัติและบรรยากาศของร้าน เมนูเครื่องดื่มและอาหาร รีวิวจากลูกค้า และช่องทางการติดต่อ เว็บไซต์นี้นับเป็นจุดเริ่มต้นที่ดีของการพัฒนาผลงานเว็บไซต์ต่อ ๆ ไปของผม", title : "Website ร้านกาแฟ", organization : "My Project", award : ""
               ,link : [{name : "ลิงก์เว็บไซต์ : ", url : "https://qgarden.netlify.app/story"}] })}
             img={coffee} title='Website ร้านกาแฟ' organization='My Project' Award=''>
           </ProjectCom>
