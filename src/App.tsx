@@ -37,7 +37,7 @@ import Workspace2 from './assets/Workspace2.png'
 import Workspace3 from './assets/Workspace3.png'
 
 import coffee from './assets/coffee.png'
-import coffee2 from './assets/coffee2.png'
+import coffee2 from './assets/Coffee2.png'
 
 import Navbar from './components/Navbar'
 import GridCom from './components/Grid_com'
